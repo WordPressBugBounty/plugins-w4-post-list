@@ -1,10 +1,10 @@
 === W4 Post List ===
 Contributors: sajib1223
-Tags: post, post list, custom post list, custom post type, widget, shortcode, media
+Tags: post, post list, custom post type, shortcode, media
 Requires at least: 5.8
 Tested up to: 6.4.3
 Requires PHP: 7.4
-Stable tag: 2.4.7
+Stable tag: 2.5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -112,6 +112,8 @@ Each list have a unique id. Display a list by using `[postlist id="LIST_ID"]`.
 3. Preview 2
 
 == Changelog ==
+= 2.4.9 = 
+* Updated: Text localization.
 = 2.4.8 = 
 * Fix: Prev page navigation button weren't showing on page 2.
 * Fix: Tracking message were showing javascript content on admin notice.
@@ -139,6 +141,8 @@ Each list have a unique id. Display a list by using `[postlist id="LIST_ID"]`.
 [See changelog of all versions](https://raw.githubusercontent.com/w4devInc/w4-post-list/master/CHANGELOG.txt).
 
 == Upgrade Notice ==
+= 2.4.9 = 
+* Updated: Text localization.
 = 2.4.8 =
 * Fix: Prev page navigation button weren't showing on page 2.
 * Fix: Tracking message were showing javascript content on admin notice.
