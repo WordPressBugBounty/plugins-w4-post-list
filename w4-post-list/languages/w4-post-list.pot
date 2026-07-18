@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: W4 Post List\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/w4-post-list/\n"
-"POT-Creation-Date: 2026-02-16 07:11:34+00:00\n"
+"POT-Creation-Date: 2026-07-18 02:56:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -279,8 +279,8 @@ msgstr ""
 msgid "Quering for table is not allowed.:%s"
 msgstr ""
 
-#: includes/class-config.php:28 includes/class-config.php:239
-#: includes/class-config.php:250
+#: includes/class-config.php:28 includes/class-config.php:262
+#: includes/class-config.php:273
 msgid "ID"
 msgstr ""
 
@@ -288,8 +288,8 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: includes/class-config.php:30 includes/class-config.php:232
-#: includes/class-config.php:240
+#: includes/class-config.php:30 includes/class-config.php:255
+#: includes/class-config.php:263
 msgid "Name"
 msgstr ""
 
@@ -322,11 +322,11 @@ msgid "Random"
 msgstr ""
 
 #: includes/class-config.php:38 includes/class-config.php:53
-#: includes/helpers/class-helper-posts.php:270
+#: includes/helpers/class-helper-posts.php:265
 msgid "None"
 msgstr ""
 
-#: includes/class-config.php:39 includes/helpers/class-helper-posts.php:102
+#: includes/class-config.php:39 includes/helpers/class-helper-posts.php:97
 msgid "Include posts"
 msgstr ""
 
@@ -354,65 +354,73 @@ msgstr ""
 msgid "Custom field"
 msgstr ""
 
-#: includes/class-config.php:148 includes/helpers/class-helper-posts.php:46
+#: includes/class-config.php:109
+msgid "Any"
+msgstr ""
+
+#: includes/class-config.php:117
+msgid "Inherit"
+msgstr ""
+
+#: includes/class-config.php:171 includes/helpers/class-helper-posts.php:46
 msgid "Posts"
 msgstr ""
 
-#: includes/class-config.php:149
+#: includes/class-config.php:172
 #: includes/helpers/class-helper-posts-tax_query.php:67
 #: includes/helpers/class-helper-terms.php:45
 msgid "Terms"
 msgstr ""
 
-#: includes/class-config.php:150 includes/helpers/class-helper-users.php:45
+#: includes/class-config.php:173 includes/helpers/class-helper-users.php:45
 msgid "Users"
 msgstr ""
 
-#: includes/class-config.php:151
+#: includes/class-config.php:174
 msgid "Terms + Posts"
 msgstr ""
 
-#: includes/class-config.php:152
+#: includes/class-config.php:175
 msgid "Users + Posts"
 msgstr ""
 
-#: includes/class-config.php:231
+#: includes/class-config.php:254
 msgid "Term id"
 msgstr ""
 
-#: includes/class-config.php:233 includes/class-config.php:241
+#: includes/class-config.php:256 includes/class-config.php:264
 msgid "Slug"
 msgstr ""
 
-#: includes/class-config.php:242
+#: includes/class-config.php:265
 msgid "Count"
 msgstr ""
 
-#: includes/class-config.php:243
+#: includes/class-config.php:266
 msgid "Term order"
 msgstr ""
 
-#: includes/class-config.php:244 includes/helpers/class-helper-terms.php:61
+#: includes/class-config.php:267 includes/helpers/class-helper-terms.php:61
 msgid "Include terms"
 msgstr ""
 
-#: includes/class-config.php:251
+#: includes/class-config.php:274
 msgid "Username"
 msgstr ""
 
-#: includes/class-config.php:252
+#: includes/class-config.php:275
 msgid "Nicename"
 msgstr ""
 
-#: includes/class-config.php:253
+#: includes/class-config.php:276
 msgid "Email"
 msgstr ""
 
-#: includes/class-config.php:254
+#: includes/class-config.php:277
 msgid "Registration time"
 msgstr ""
 
-#: includes/class-config.php:255
+#: includes/class-config.php:278
 msgid "Display name"
 msgstr ""
 
@@ -651,134 +659,120 @@ msgid "Post status"
 msgstr ""
 
 #: includes/helpers/class-helper-posts.php:81
-msgid "Any"
+msgid ""
+"Note: \"Any\" excludes statuses that are hidden from search. Check a status "
+"directly to include it."
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:82
-msgid "Publish"
-msgstr ""
-
-#: includes/helpers/class-helper-posts.php:83
-msgid "Pending"
-msgstr ""
-
-#: includes/helpers/class-helper-posts.php:84
-msgid "Future"
-msgstr ""
-
-#: includes/helpers/class-helper-posts.php:85
-msgid "Inherit"
-msgstr ""
-
-#: includes/helpers/class-helper-posts.php:93
+#: includes/helpers/class-helper-posts.php:88
 msgid "Search keywords"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:96
+#: includes/helpers/class-helper-posts.php:91
 msgid "search posts"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:105
-#: includes/helpers/class-helper-posts.php:114
+#: includes/helpers/class-helper-posts.php:100
+#: includes/helpers/class-helper-posts.php:109
 msgid "comma separated post id"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:111
+#: includes/helpers/class-helper-posts.php:106
 msgid "Exclude posts"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:120
+#: includes/helpers/class-helper-posts.php:115
 msgid "Post parent"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:123
+#: includes/helpers/class-helper-posts.php:118
 msgid "display child posts. comma separated parent post ids"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:129
+#: includes/helpers/class-helper-posts.php:124
 msgid "Post author"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:132
-#: includes/helpers/class-helper-posts.php:141
+#: includes/helpers/class-helper-posts.php:127
+#: includes/helpers/class-helper-posts.php:136
 msgid "comma separated user/author ids. use 0 to indicate current user."
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:138
+#: includes/helpers/class-helper-posts.php:133
 msgid "Exclude post author"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:148
+#: includes/helpers/class-helper-posts.php:143
 msgid "Exclude self"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:151
-#: includes/helpers/class-helper-posts.php:163
+#: includes/helpers/class-helper-posts.php:146
+#: includes/helpers/class-helper-posts.php:158
 msgid "No"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:152
-#: includes/helpers/class-helper-posts.php:164
+#: includes/helpers/class-helper-posts.php:147
+#: includes/helpers/class-helper-posts.php:159
 msgid "Yes"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:154
+#: includes/helpers/class-helper-posts.php:149
 msgid "exclude current post on single post/page pages"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:160
+#: includes/helpers/class-helper-posts.php:155
 msgid "Child of self"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:166
+#: includes/helpers/class-helper-posts.php:161
 msgid "display child posts of current post/page/custom post type"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:173
+#: includes/helpers/class-helper-posts.php:168
 #: includes/helpers/class-helper-terms.php:121
 #: includes/helpers/class-helper-users.php:88
 msgid "Orderby"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:183
+#: includes/helpers/class-helper-posts.php:178
 #: includes/helpers/class-helper-terms.php:129
 #: includes/helpers/class-helper-users.php:96
 msgid "Order"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:186
-#: includes/helpers/class-helper-posts.php:271
+#: includes/helpers/class-helper-posts.php:181
+#: includes/helpers/class-helper-posts.php:266
 #: includes/helpers/class-helper-terms.php:132
 #: includes/helpers/class-helper-users.php:99
 msgid "ASC"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:187
-#: includes/helpers/class-helper-posts.php:272
+#: includes/helpers/class-helper-posts.php:182
+#: includes/helpers/class-helper-posts.php:267
 #: includes/helpers/class-helper-terms.php:133
 #: includes/helpers/class-helper-users.php:100
 msgid "DESC"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:195
+#: includes/helpers/class-helper-posts.php:190
 #: includes/helpers/class-helper-terms.php:156
 #: includes/helpers/class-helper-users.php:123
 msgid "Maximum items"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:197
+#: includes/helpers/class-helper-posts.php:192
 msgid ""
 "maximum results to display in total, restrict number of items even while "
 "paginating"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:205
+#: includes/helpers/class-helper-posts.php:200
 #: includes/helpers/class-helper-terms.php:140
 #: includes/helpers/class-helper-users.php:107
 msgid "Offset"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:207
+#: includes/helpers/class-helper-posts.php:202
 msgid ""
 "skip given number of posts from beginning. while building lists \n"
 "\t\t\t\tusing the same filters but to display on separate places, use "
@@ -786,39 +780,39 @@ msgid ""
 "\t\t\t\tto skip the previously displayed amount of posts"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:218
+#: includes/helpers/class-helper-posts.php:213
 #: includes/helpers/class-helper-terms.php:148
 #: includes/helpers/class-helper-users.php:115
 msgid "Items per page"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:221
+#: includes/helpers/class-helper-posts.php:216
 msgid ""
 "number of items to show per page\n"
 " \t\t\t\t<br />use <strong>-1</strong> to display all"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:234
+#: includes/helpers/class-helper-posts.php:229
 msgid "Group by"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:245
+#: includes/helpers/class-helper-posts.php:240
 msgid "Group by Date"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:248
+#: includes/helpers/class-helper-posts.php:243
 msgid "Publish date"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:249
+#: includes/helpers/class-helper-posts.php:244
 msgid "Modified date"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:258
+#: includes/helpers/class-helper-posts.php:253
 msgid "Group by \"Custom field\" name"
 msgstr ""
 
-#: includes/helpers/class-helper-posts.php:267
+#: includes/helpers/class-helper-posts.php:262
 msgid "Group Order"
 msgstr ""
 
@@ -1369,9 +1363,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"This plugin lets you create a list of - Posts, Terms, Users, Terms + Posts "
-"and Users + Posts. Outputs are completely customizable using Shortcode, "
-"HTML & CSS. Read documentation plugin usage."
+"Create lists of posts, terms and users — grouped archives, taxonomy indexes "
+"and user directories — placed anywhere with the block, [postlist] shortcode "
+"or widget."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1382,7 +1376,7 @@ msgstr ""
 msgid "https://shazzad.me"
 msgstr ""
 
-#: includes/class-config.php:129
+#: includes/class-config.php:152
 msgctxt "Media Type"
 msgid "Any"
 msgstr ""
