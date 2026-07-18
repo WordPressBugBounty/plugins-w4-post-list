@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: W4 Post List\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/w4-post-list/\n"
-"POT-Creation-Date: 2026-07-18 02:56:55+00:00\n"
+"POT-Creation-Date: 2026-07-18 05:17:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -70,30 +70,139 @@ msgstr ""
 
 #: admin/pages/class-admin-page-docs.php:32
 #: admin/pages/class-admin-page-docs.php:33
-#: admin/pages/class-admin-page-docs.php:55
+#: admin/pages/class-admin-page-docs.php:56
 msgid "Documentation"
 msgstr ""
 
 #: admin/pages/class-admin-page-docs.php:48
+msgid "Getting Started"
+msgstr ""
+
+#: admin/pages/class-admin-page-docs.php:49
+msgid "Usage"
+msgstr ""
+
+#: admin/pages/class-admin-page-docs.php:50
+#: admin/pages/views/html-getting-started.php:75
 #: admin/views/html-list-edit-form.php:58
 msgid "Template"
 msgstr ""
 
-#: admin/pages/class-admin-page-docs.php:49
+#: admin/pages/class-admin-page-docs.php:51
+#: admin/pages/views/html-getting-started.php:76
 msgid "Template Tags"
 msgstr ""
 
-#: admin/pages/class-admin-page-docs.php:50
-msgid "Usage"
-msgstr ""
-
-#: admin/pages/class-admin-page-docs.php:61
+#: admin/pages/class-admin-page-docs.php:62
 #. translators: %s: current plugin version
 msgid "Plugin Version: %s"
 msgstr ""
 
-#: admin/pages/class-admin-page-docs.php:70
+#: admin/pages/class-admin-page-docs.php:71
 msgid "Secondary menu"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:11
+msgid "Your first list in four steps"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:15
+msgid "1. Create a list"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:21
+#. translators: %s: link to the new list screen
+msgid ""
+"Go to %s and give your list a title. Choose a List Type: Posts, Terms, "
+"Users, Terms + Posts or Users + Posts."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:22
+msgid "W4 Post List &rarr; Add New"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:28
+msgid "2. Choose what to show"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:31
+msgid ""
+"Open the section named after your list type (for example \"Posts\") and "
+"pick the post type, how many items to show, and the order. The other "
+"sections (Tax Query, Meta Query, Date Query) are optional filters — you can "
+"skip them entirely for your first list."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:35
+msgid "3. Publish"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:38
+msgid ""
+"A default template is applied automatically, so you do not need to touch "
+"the Template section to get output. Click Publish."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:42
+msgid "4. Place it on your site"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:45
+msgid "Three ways to display your list:"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:49
+msgid "Block: add the \"W4 Post List\" block in the editor and pick your list."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:55
+#. translators: %s: example shortcode in code tag
+msgid ""
+"Shortcode: paste %s into any content. Every list's ready-made shortcode is "
+"shown in the Shortcode column on the All Lists screen."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:61
+msgid "Widget: add the W4 Post List widget to any widget area."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:66
+msgid "Customizing the output"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:72
+#. translators: 1: example template tag, 2: example template tag, 3: link to
+#. the Template tab, 4: link to the Template Tags tab
+msgid ""
+"Each list has an HTML template that controls its markup. Edit it in the "
+"Template section of the list editor using template tags like %1$s or %2$s — "
+"see the %3$s and %4$s tabs above for working examples and the full tag "
+"reference."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:82
+msgid "If your list shows nothing"
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:85
+msgid "Make sure the list is Published, not Draft."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:86
+msgid ""
+"Check the shortcode ID matches the list — copy it from the Shortcode column "
+"on the All Lists screen."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:91
+#. translators: 1: posts loop tag, 2: terms loop tag, 3: users loop tag
+msgid ""
+"If you edited the template, it must keep the loop tags for its list type: "
+"%1$s for posts, %2$s for terms, %3$s for users."
+msgstr ""
+
+#: admin/pages/views/html-getting-started.php:98
+msgid "Re-check the query options — the list may simply have matched no items."
 msgstr ""
 
 #: admin/pages/views/html-plugin-links.php:43
@@ -125,15 +234,17 @@ msgid "Plugin Updates"
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:10
-msgid "What is Template?"
+msgid "What is a Template?"
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:13
 msgid ""
-"Template handles the html output of your list. It is designed with Templace "
-"Tags to display dynamic information and HTML to manage layout. Availability "
-"of Template structure & tags varies based on the type of list you have "
-"selected, and it's parent element."
+"The template controls the HTML output of your list. It is plain HTML mixed "
+"with Template Tags that are replaced with dynamic information. Everything "
+"between a loop tag pair (for example [posts] and [/posts]) is repeated once "
+"per item, so wrapper elements like <ul> belong outside the loop tags and "
+"the per-item markup goes inside. The available loop tags and template tags "
+"depend on the list type you have selected."
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:17
@@ -141,19 +252,19 @@ msgid "Examples"
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:20
-msgid "Post List"
+msgid "Post list"
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:30
 msgid ""
-"Post list (with excerpt limited to 20 words, post class on post wrapper "
+"Post list (with excerpt limited to 20 words, post class on the post wrapper "
 "element)"
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:40
 msgid ""
-"Post list (grouped by year - chose <code>Group By</code> option to Year "
-"while using this)."
+"Post list grouped by year (set the \"Group by\" option to Year while using "
+"this)"
 msgstr ""
 
 #: admin/pages/views/html-template-examples.php:56
@@ -178,8 +289,8 @@ msgstr ""
 
 #: admin/pages/views/html-template-tags.php:13
 msgid ""
-"Template tags are like WordPress shortcode. It's a piece of code that gets "
-"replaced with a dyanamic value."
+"Template tags are like WordPress shortcodes: a piece of code that gets "
+"replaced with a dynamic value."
 msgstr ""
 
 #: admin/pages/views/html-template-tags.php:20
@@ -195,7 +306,7 @@ msgid "Parameters"
 msgstr ""
 
 #: admin/pages/views/html-usage.php:11
-msgid "Diplaying list with shortcode"
+msgid "Displaying a list with the shortcode"
 msgstr ""
 
 #: admin/pages/views/html-usage.php:17
@@ -649,8 +760,8 @@ msgstr ""
 
 #: includes/helpers/class-helper-posts.php:70
 msgid ""
-"if displaying attachment, choose mime type to restrcit result to specific "
-"file types."
+"If displaying attachments, choose a mime type to restrict results to "
+"specific file types."
 msgstr ""
 
 #: includes/helpers/class-helper-posts.php:78
@@ -808,6 +919,10 @@ msgstr ""
 msgid "Modified date"
 msgstr ""
 
+#: includes/helpers/class-helper-posts.php:246
+msgid "Which date to use when calculating the group."
+msgstr ""
+
 #: includes/helpers/class-helper-posts.php:253
 msgid "Group by \"Custom field\" name"
 msgstr ""
@@ -821,7 +936,9 @@ msgid "Preset"
 msgstr ""
 
 #: includes/helpers/class-helper-presets.php:45
-msgid "preset is predefined templates"
+msgid ""
+"Presets are ready-made templates. When one is selected it controls the "
+"output, and the Template and Style sections are hidden."
 msgstr ""
 
 #: includes/helpers/class-helper-presets.php:183
@@ -875,9 +992,7 @@ msgstr ""
 #: includes/helpers/class-helper-terms.php:64
 #: includes/helpers/class-helper-terms.php:73
 #: includes/helpers/class-helper-terms.php:82
-#: includes/helpers/class-helper-users.php:55
-#: includes/helpers/class-helper-users.php:64
-msgid "comma separated term id"
+msgid "Comma-separated term IDs."
 msgstr ""
 
 #: includes/helpers/class-helper-terms.php:70
@@ -932,6 +1047,11 @@ msgstr ""
 
 #: includes/helpers/class-helper-users.php:52
 msgid "Include users"
+msgstr ""
+
+#: includes/helpers/class-helper-users.php:55
+#: includes/helpers/class-helper-users.php:64
+msgid "Comma-separated user IDs."
 msgstr ""
 
 #: includes/helpers/class-helper-users.php:61
@@ -1069,7 +1189,7 @@ msgid "Post excerpt / short description"
 msgstr ""
 
 #: includes/template-tags/class-post-template-tags.php:245
-msgid "Remove shortcodes from exceprt text. use strip_shortcode=\"1\" to enabled."
+msgid "Remove shortcodes from excerpt text. Use strip_shortcode=\"1\" to enable."
 msgstr ""
 
 #: includes/template-tags/class-post-template-tags.php:252
@@ -1079,7 +1199,7 @@ msgstr ""
 #: includes/template-tags/class-post-template-tags.php:258
 #: includes/template-tags/class-post-template-tags.php:289
 msgid ""
-"( text or number ) based on the rerurn attribute & only if the post has a "
+"( text or number ) based on the return attribute & only if the post has a "
 "featured image assigned"
 msgstr ""
 
