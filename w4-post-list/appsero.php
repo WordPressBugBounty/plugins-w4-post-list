@@ -54,6 +54,13 @@ function w4pl_appsero_admin_notices() {
 		return;
 	}
 
+	// Hold the telemetry ask until the user has published a first list, so
+	// onboarding guidance is the plugin's first communication.
+	$published = wp_count_posts( 'w4pl' );
+	if ( empty( $published->publish ) ) {
+		return;
+	}
+
 	if (
 		( in_array( $pagenow, [ 'edit.php' ], true ) && 'w4pl' === $typenow )
 	) {
@@ -143,6 +150,12 @@ function w4pl_insights_extra() {
 
 	if ( defined( 'WPB_VC_VERSION' ) ) {
 		$extra['VisualComposer'] = 'Active';
+	}
+
+	if ( class_exists( 'W4PL_Stats' ) ) {
+		foreach ( W4PL_Stats::all() as $key => $value ) {
+			$extra[ 'Stat_' . $key ] = (int) $value;
+		}
 	}
 
 	return $extra;
