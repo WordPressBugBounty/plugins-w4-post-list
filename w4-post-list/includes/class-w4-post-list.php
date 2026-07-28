@@ -29,7 +29,7 @@ final class W4_Post_List {
 	 *
 	 * @var string
 	 */
-	public $version = '2.8.0';
+	public $version = '2.11.0';
 
 	/**
 	 * This will hold current class instance
@@ -87,6 +87,7 @@ final class W4_Post_List {
 		include W4PL_DIR . '/includes/class-post-types.php';
 		include W4PL_DIR . '/includes/class-options-migrator.php';
 		include W4PL_DIR . '/includes/class-stats.php';
+		include W4PL_DIR . '/includes/class-starter-templates.php';
 		include W4PL_DIR . '/includes/class-list-templates.php';
 		include W4PL_DIR . '/includes/class-list-helper.php';
 		include W4PL_DIR . '/includes/class-list-content.php';
@@ -130,6 +131,8 @@ final class W4_Post_List {
 			include W4PL_DIR . '/admin/class-admin-lists-metaboxes.php';
 			include W4PL_DIR . '/admin/class-admin-list-editor.php';
 			include W4PL_DIR . '/admin/class-admin-onboarding.php';
+			include W4PL_DIR . '/admin/class-admin-preview.php';
+			include W4PL_DIR . '/admin/class-admin-validation.php';
 
 			/* Admin pages */
 			foreach ( glob( W4PL_DIR . 'admin/pages/*.php' ) as $file ) {
@@ -151,6 +154,7 @@ final class W4_Post_List {
 
 		new W4PL_Options_Migrator();
 		new W4PL_Stats();
+		new W4PL_Starter_Templates();
 		new W4PL_List_Helper();
 		new W4PL_Helper_Posts();
 		new W4PL_Helper_Terms();
@@ -171,6 +175,8 @@ final class W4_Post_List {
 			new W4PL_Admin_Lists_Table_Columns();
 			new W4PL_Admin_Lists_Metaboxes();
 			new W4PL_Admin_Onboarding();
+			new W4PL_Admin_Preview();
+			new W4PL_Admin_Validation();
 
 			new W4PL_Admin_Page_Docs();
 		}

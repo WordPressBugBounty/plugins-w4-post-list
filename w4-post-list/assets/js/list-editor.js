@@ -70,6 +70,23 @@
 	$(document).on('w4pl/form_loaded', function (el) {
 		w4pl_init_code_editors();
 		w4pl_adjust_height();
+
+		/*
+		 * A just-applied starter template renders a marker notice; open the
+		 * tab it points at (the Template section) so the copied markup is
+		 * immediately visible instead of hiding behind the tab the user
+		 * happened to be on.
+		 */
+		var marker = $('#w4pl_list_options .w4pl-starter-applied[data-show-tab]').first();
+		if (marker.length) {
+			var target = $('#' + marker.data('show-tab'));
+			if (target.length) {
+				$('.w4pl_field_group').removeClass('w4pl_active');
+				target.addClass('w4pl_active');
+				$('#w4pl_tab_id').val(marker.data('show-tab'));
+			}
+		}
+
 		setTimeout(function () {
 			w4pl_refresh_code_editors();
 			w4pl_adjust_height();
@@ -208,6 +225,13 @@
 			$('#w4pl_lo').remove();
 			publish.removeClass('disabled').prop('disabled', false);
 
+			/*
+			 * A picked starter template was never applied (the refresh died),
+			 * so clear the selection - otherwise a later save would apply it
+			 * over the user's manual edits, contradicting the message below.
+			 */
+			$('#w4pl_list_options select[name="w4pl[starter_template]"]').val('');
+
 			var message = (window.w4plListEditor && window.w4plListEditor.refreshFailed) ?
 				window.w4plListEditor.refreshFailed :
 				'Could not refresh the form. Your entries are unchanged - check your connection and try again.';
@@ -218,6 +242,91 @@
 			);
 		});
 	}
+
+	/* "Any" post status is exclusive of concrete statuses. */
+	$(document.body).on('change', 'input[name="w4pl[post_status][]"]', function () {
+		var boxes = $('input[name="w4pl[post_status][]"]');
+
+		if ('any' === $(this).val() && this.checked) {
+			boxes.not(this).prop('checked', false);
+		} else if (this.checked) {
+			boxes.filter('[value="any"]').prop('checked', false);
+		}
+	});
+
+	/* One-click recovery from a template/list-type mismatch. */
+	$(document.body).on('click', '#w4pl_use_default_template', function () {
+		var tpl = $(this).data('template') || '';
+
+		if (w4plEditors.w4pl_template) {
+			w4plEditors.w4pl_template.setValue(tpl);
+			w4plEditors.w4pl_template.save();
+		} else {
+			$('#w4pl_template').val(tpl);
+		}
+
+		$(this).closest('.notice').remove();
+		return false;
+	});
+
+	/* ----- Live preview ----- */
+
+	function w4pl_l10n(key, fallback) {
+		if (window.w4plListEditor && window.w4plListEditor[key]) {
+			return window.w4plListEditor[key];
+		}
+		return fallback;
+	}
+
+	function w4pl_refresh_preview() {
+		var pane = $('#w4pl_preview_pane');
+		var status = $('#w4pl_preview_status');
+
+		if (!pane.length || !pane.is(':visible')) {
+			return;
+		}
+
+		w4pl_sync_code_editors();
+		status.text(w4pl_l10n('previewLoading', 'Rendering preview…'));
+
+		var data = $('#w4pl_list_options :input').serialize()
+			+ '&action=w4pl_list_preview'
+			+ '&nonce=' + encodeURIComponent(w4pl_l10n('previewNonce', ''));
+
+		$.post(ajaxurl, data, function (r) {
+			if (r && r.success && r.data && typeof r.data.html === 'string') {
+				var frame = document.getElementById('w4pl_preview_frame');
+				frame.srcdoc = '<!doctype html><html><head><meta charset="utf-8">'
+					+ '<style>body{margin:16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1e1e1e;}img{max-width:100%;height:auto;}</style>'
+					+ '</head><body>' + r.data.html + '</body></html>';
+				status.text('');
+			} else {
+				status.text((r && r.data && r.data.message) ? r.data.message : w4pl_l10n('previewFailed', 'Preview failed.'));
+			}
+		}).fail(function () {
+			status.text(w4pl_l10n('previewFailed', 'Preview failed — check your connection and try again.'));
+		});
+	}
+
+	$(document.body).on('click', '#w4pl_preview_toggle', function () {
+		var pane = $('#w4pl_preview_pane');
+		var open = pane.is(':visible');
+
+		if (open) {
+			pane.hide();
+			$(this).attr('aria-expanded', 'false').text(w4pl_l10n('previewShow', 'Preview'));
+		} else {
+			pane.show();
+			$(this).attr('aria-expanded', 'true').text(w4pl_l10n('previewHide', 'Hide preview'));
+			w4pl_refresh_preview();
+		}
+		return false;
+	});
+
+	/* Keep an open preview in sync after each successful form refresh. */
+	$(document).on('w4pl/form_loaded', function () {
+		w4pl_refresh_preview();
+	});
 
 	/*
 	 * Insert a template tag at the cursor - into the CodeMirror instance when

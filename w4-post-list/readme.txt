@@ -4,7 +4,7 @@ Tags: post list, user list, post grid, category list, shortcode
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.8.0
+Stable tag: 2.11.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -58,7 +58,7 @@ Place any list anywhere with the **W4 Post List block**, the `[postlist id="123"
 
 = Full control over the output =
 
-Output is template-driven: every list has an HTML template with template tags like `[post_title]`, `[post_permalink]`, `[featured_image]`, `[post_author_name]` and `[post_meta key="..."]`. Start from a preset and tweak it, or write your own markup for pixel-perfect control. If you want a drag-and-drop visual builder, this plugin isn't that — it keeps you close to your own HTML, which is exactly why themes and developers like it.
+Output is template-driven: every list has an HTML template with template tags like `[post_title]`, `[post_permalink]`, `[featured_image]`, `[post_author_name]` and `[post_meta key="..."]`. Start from a ready-made template — cards, archives, category indexes, user directories — and tweak it, or write your own markup for pixel-perfect control. A live preview in the editor shows your changes before you save. If you want a drag-and-drop visual builder, this plugin isn't that — it keeps you close to your own HTML, which is exactly why themes and developers like it.
 
 See the [full template tag reference](https://w4dev.com/docs/w4-post-list/faqs/what-are-the-available-template-tags/) and [live examples with copy-paste templates](https://w4dev.com/wp/w4-post-list-examples/).
 
@@ -88,6 +88,14 @@ Create a Posts list, open the **Posts: Tax Query** section, and select your taxo
 
 The usual causes, in order: the list is not **Published** yet; the shortcode ID doesn't match (check the Shortcode column on the All Lists screen); the template is missing its loop tags (a Posts list template needs `[posts]...[/posts]`, Terms needs `[terms]...[/terms]`, Users needs `[users]...[/users]`); or the query simply matched no items. Opening the list and re-checking the query options usually finds it.
 
+= Do I have to write the template myself? =
+
+No. Pick a layout from **Start from a template** in the list editor — thumbnail cards, a year archive, a category index, a user directory and more. It copies the markup and styles into the editable Template and Style fields, so you can use it as-is or adjust anything.
+
+= Can I see a list before publishing it? =
+
+Yes - the **Preview** button under the editor renders your current, unsaved settings, and refreshes automatically as you change options. It renders without your theme's stylesheet, so spacing and fonts will differ slightly on the real page.
+
 = Can I display custom fields (including ACF)? =
 
 Yes. Use `[post_meta key="your_field_key"]` inside the posts loop. Fields stored as plain values (text, numbers, URLs) work best; complex/serialized fields are output as stored.
@@ -111,11 +119,33 @@ In your admin: **W4 Post List → Documentation** (template tags reference, exam
 
 == Screenshots ==
 
-1. The list editor — choose a list type, then configure query, template and style options per section.
-2. Front-end output — an AJAX-paginated post list, an image/media grid, and a year/month grouped archive.
+1. Start from a template — pick from ready-made layouts per list type.
+2. The template editor — syntax highlighting, tag insertion, editable starter markup.
+3. Live preview — see your unsaved changes rendered without leaving the editor.
+4. Thumbnail cards starter on the front end.
+5. Year archive starter — posts grouped under year headings.
+6. User directory starter — avatars, names and bios in a card grid.
+7. Helpful save-time warnings — mistakes are explained and coerced, never rejected.
+8. Every list's shortcode is one click away.
 
 
 == Changelog ==
+= 2.11.0 =
+* New: The editor now catches mistakes at save time - non-numeric values in numeric fields are coerced with a clear warning, unknown template tags get a "did you mean" suggestion, and a template missing its loop tag warns before rendering blank.
+* New: Switching list type with an incompatible template shows an inline warning with a one-click "Replace with the default template" fix.
+* New: The list editor form is protected by a nonce; quick edit, bulk edit and autosave can never touch list options.
+* Improved: "Any" post status now excludes the concrete statuses automatically.
+* New: A once-only review request appears a week after your first published list. Clicking either button - including "Leave a review" itself - resolves it forever.
+= 2.10.0 =
+* New: Live preview in the list editor - a Preview button renders your current, unsaved settings in an isolated pane, refreshing automatically after option changes. No more publish-and-reload loops while designing a list.
+* Improved: Getting Started guide mentions the preview workflow.
+= 2.9.0 =
+* New: "Start from a template" - pick from 8 ready-made layouts (simple list, thumbnail cards, title & date list, year archive, category index, category index with posts, user directory, authors with posts). Picking one copies editable markup and styles into the Template and Style fields and sets the options it needs, like Group by. Developers can add layouts via the w4pl/starter_templates filter.
+* New: Applying a starter shows a confirmation and opens the Template section automatically, so you immediately see what you got.
+* Improved: Lists using a legacy preset keep working exactly as before; the legacy preset field only appears on those lists.
+* Improved: In-plugin docs updated for the new flow; new FAQ "Do I have to write the template myself?".
+* Fix: Guarded the editor form action URL against missing server variables (CLI contexts).
+* Dev: Select field values are now attribute-escaped in the form engine.
 = 2.8.0 =
 * New: The Template, CSS and JavaScript fields are now real code editors with syntax highlighting and line numbers; template tags insert at the cursor.
 * Improved: Default templates rewritten in the plain tag dialect with a visible per-item wrapper (div.post-item / .term-item / .user-item) and the [nav] pagination tag, so the loop structure is obvious at a glance. Applies to newly created lists; saved lists keep their stored template.
@@ -166,6 +196,12 @@ In your admin: **W4 Post List → Documentation** (template tags reference, exam
 [See changelog of all versions](https://raw.githubusercontent.com/w4devInc/w4-post-list/master/CHANGELOG.txt).
 
 == Upgrade Notice ==
+= 2.11.0 =
+Biggest update yet: 8 starter templates with one-click apply, live preview in the editor, and save-time validation with helpful warnings.
+= 2.10.0 =
+Live preview in the list editor.
+= 2.9.0 =
+Eight ready-made starter templates with copy-on-select editing. Legacy presets unchanged.
 = 2.8.0 =
 Code editors for templates, copyable shortcode box, visible error notices for editors, editor stability fixes.
 = 2.7.0 =

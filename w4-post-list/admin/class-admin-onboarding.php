@@ -21,10 +21,118 @@ class W4PL_Admin_Onboarding {
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'maybe_create_sample_list' ) );
 		add_action( 'admin_init', array( $this, 'maybe_dismiss_welcome' ) );
+		add_action( 'admin_init', array( $this, 'maybe_dismiss_review_prompt' ) );
+		add_action( 'admin_init', array( $this, 'maybe_go_to_review' ) );
 		add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 		add_action( 'admin_notices', array( $this, 'empty_state' ) );
+		add_action( 'admin_notices', array( $this, 'review_prompt' ) );
 		add_action( 'wp_ajax_w4pl_dismiss_welcome', array( $this, 'ajax_dismiss_welcome' ) );
 		add_action( 'current_screen', array( $this, 'help_tabs' ) );
+	}
+
+	/**
+	 * Whether the once-only review ask should show: the user published a
+	 * first list at least seven days ago and has not dismissed the ask.
+	 *
+	 * @return bool
+	 */
+	public static function review_prompt_due() {
+		if ( get_option( 'w4pl_review_dismissed' ) ) {
+			return false;
+		}
+
+		$first_publish = (int) get_option( 'w4pl_first_publish_time' );
+
+		return $first_publish && ( time() - $first_publish ) >= 7 * DAY_IN_SECONDS;
+	}
+
+	/**
+	 * Once-only review ask on the Lists screen.
+	 */
+	public function review_prompt() {
+		if ( ! current_user_can( 'edit_pages' ) || ! self::review_prompt_due() ) {
+			return;
+		}
+
+		$screen = get_current_screen();
+		if ( ! $screen || 'edit-w4pl' !== $screen->id ) {
+			return;
+		}
+
+		$dismiss_url = wp_nonce_url( add_query_arg( 'w4pl_dismiss_review', '1' ), 'w4pl_dismiss_review' );
+		$review_url  = wp_nonce_url( add_query_arg( 'w4pl_review_go', '1' ), 'w4pl_review_go' );
+		?>
+		<div class="notice notice-info" id="w4pl_review_notice">
+			<p>
+				<?php esc_html_e( 'You have been building lists with W4 Post List for a while — a short review on wordpress.org helps other people find the plugin, and helps us keep improving it.', 'w4-post-list' ); ?>
+			</p>
+			<p>
+				<a class="button button-primary" href="<?php echo esc_url( $review_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Leave a review', 'w4-post-list' ); ?></a>
+				<a class="button" href="<?php echo esc_url( $dismiss_url ); ?>"><?php esc_html_e( 'No thanks / already did', 'w4-post-list' ); ?></a>
+			</p>
+		</div>
+		<script>
+		( function () {
+			var notice = document.getElementById( 'w4pl_review_notice' );
+			if ( ! notice ) {
+				return;
+			}
+			// Either action resolves the ask; hide immediately in this tab.
+			notice.addEventListener( 'click', function ( e ) {
+				if ( e.target.closest && e.target.closest( 'a.button' ) ) {
+					notice.style.display = 'none';
+				}
+			} );
+		} )();
+		</script>
+		<?php
+	}
+
+	/**
+	 * "Leave a review" clicked: mark the ask resolved, then send the (new)
+	 * tab on to the wordpress.org review form. Clicking the ask counts as
+	 * answering it — the notice never shows again either way.
+	 */
+	public function maybe_go_to_review() {
+		if ( ! isset( $_GET['w4pl_review_go'] ) ) {
+			return;
+		}
+
+		if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_GET['_wpnonce'] ) ), 'w4pl_review_go' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'edit_pages' ) ) {
+			return;
+		}
+
+		update_option( 'w4pl_review_dismissed', time(), false );
+
+		// External fixed destination; wp_safe_redirect would reject the host.
+		wp_redirect( 'https://wordpress.org/support/plugin/w4-post-list/reviews/#new-post' ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
+		exit;
+	}
+
+	/**
+	 * Permanently dismiss the review ask.
+	 */
+	public function maybe_dismiss_review_prompt() {
+		if ( ! isset( $_GET['w4pl_dismiss_review'] ) ) {
+			return;
+		}
+
+		if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_GET['_wpnonce'] ) ), 'w4pl_dismiss_review' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'edit_pages' ) ) {
+			return;
+		}
+
+		update_option( 'w4pl_review_dismissed', time(), false );
+
+		wp_safe_redirect( remove_query_arg( array( 'w4pl_dismiss_review', '_wpnonce' ) ) );
+		exit;
 	}
 
 	/**
