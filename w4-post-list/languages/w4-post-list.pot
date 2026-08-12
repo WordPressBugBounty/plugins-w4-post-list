@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: W4 Post List\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/w4-post-list/\n"
-"POT-Creation-Date: 2026-08-05 21:16:12+00:00\n"
+"POT-Creation-Date: 2026-08-12 04:12:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -757,6 +757,7 @@ msgid "Users + Posts"
 msgstr ""
 
 #: includes/class-config.php:254
+#: includes/template-tags/class-term-template-tags.php:31
 msgid "Term id"
 msgstr ""
 
@@ -1479,373 +1480,394 @@ msgstr ""
 msgid "HTML classes of post"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:89
-#: includes/template-tags/class-post-template-tags.php:242
+#: includes/template-tags/class-post-template-tags.php:87
+msgid "Post title"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:90
+#: includes/template-tags/class-post-template-tags.php:243
 msgid "Limit number of words to display"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:92
+#: includes/template-tags/class-post-template-tags.php:93
 msgid "Limit number of characters to display"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:99
+#: includes/template-tags/class-post-template-tags.php:100
 msgid "Post name"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:104
+#: includes/template-tags/class-post-template-tags.php:105
 msgid "Post comment form permalink"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:109
+#: includes/template-tags/class-post-template-tags.php:110
 msgid "Number of approved comments"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:115
+#: includes/template-tags/class-post-template-tags.php:116
 msgid ""
 "Unique post date. Ignored on current item if previous post date and curent "
 "post date is same ( date formatted )"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:118
-#: includes/template-tags/class-post-template-tags.php:121
-#: includes/template-tags/class-post-template-tags.php:132
-#: includes/template-tags/class-post-template-tags.php:143
-#: includes/template-tags/class-post-template-tags.php:154
-#: includes/template-tags/class-post-template-tags.php:165
+#: includes/template-tags/class-post-template-tags.php:119
+#: includes/template-tags/class-post-template-tags.php:122
+#: includes/template-tags/class-post-template-tags.php:133
+#: includes/template-tags/class-post-template-tags.php:144
+#: includes/template-tags/class-post-template-tags.php:155
+#: includes/template-tags/class-post-template-tags.php:166
 msgid "php datetime format"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:129
+#: includes/template-tags/class-post-template-tags.php:130
 msgid "Post date ( date formatted )"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:140
+#: includes/template-tags/class-post-template-tags.php:141
 msgid "Post date ( time formatted )"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:151
+#: includes/template-tags/class-post-template-tags.php:152
 msgid "Post modified date ( date formatted )"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:162
+#: includes/template-tags/class-post-template-tags.php:163
 msgid "Post modified date ( time formatted )"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:173
+#: includes/template-tags/class-post-template-tags.php:174
 msgid "Post author's meta"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:176
+#: includes/template-tags/class-post-template-tags.php:177
 msgid "name of the meta information"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:212
+#: includes/template-tags/class-post-template-tags.php:213
 msgid "Post author's name"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:217
+#: includes/template-tags/class-post-template-tags.php:218
 msgid "Post author's link"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:222
+#: includes/template-tags/class-post-template-tags.php:223
 msgid "Post author's email address"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:228
+#: includes/template-tags/class-post-template-tags.php:229
 msgid "Post author's avatar"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:231
+#: includes/template-tags/class-post-template-tags.php:232
 msgid "avatar image size"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:239
+#: includes/template-tags/class-post-template-tags.php:240
 msgid "Post excerpt / short description"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:245
+#: includes/template-tags/class-post-template-tags.php:246
 msgid "Remove shortcodes from excerpt text. Use strip_shortcode=\"1\" to enable."
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:252
+#: includes/template-tags/class-post-template-tags.php:253
 msgid "Post content"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:258
-#: includes/template-tags/class-post-template-tags.php:289
+#: includes/template-tags/class-post-template-tags.php:259
+#: includes/template-tags/class-post-template-tags.php:290
 msgid ""
 "( text or number ) based on the return attribute & only if the post has a "
 "featured image assigned"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:261
-#: includes/template-tags/class-post-template-tags.php:292
+#: includes/template-tags/class-post-template-tags.php:262
+#: includes/template-tags/class-post-template-tags.php:293
 msgid ""
 "\"src\" - will return src of the image, \"id\" - will return id of the "
 "image, by default it will return image html"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:269
-#: includes/template-tags/class-post-template-tags.php:300
+#: includes/template-tags/class-post-template-tags.php:270
+#: includes/template-tags/class-post-template-tags.php:301
 msgid "( string ), class name for the image ( &lt;img /&gt; ) tag"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:272
+#: includes/template-tags/class-post-template-tags.php:273
 msgid "( string ), image size"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:275
+#: includes/template-tags/class-post-template-tags.php:276
 msgid "( number ), image width"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:278
+#: includes/template-tags/class-post-template-tags.php:279
 msgid "( number ), image height"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:281
+#: includes/template-tags/class-post-template-tags.php:282
 msgid "( text ), default placeholder text if post doesnt have featured image"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:303
+#: includes/template-tags/class-post-template-tags.php:304
 msgid "( string ), thumbnail size"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:306
+#: includes/template-tags/class-post-template-tags.php:307
 msgid "( number ), thumbnail width"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:309
+#: includes/template-tags/class-post-template-tags.php:310
 msgid "( number ), thumbnail height"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:312
+#: includes/template-tags/class-post-template-tags.php:313
 msgid "( text ), default placeholder text if post doesnt have thumbnail"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:320
-msgid ""
-"<strong>Output</strong>: <strong>first</strong> or <strong>last</strong> "
-"image source ( src=\"\" ) from post content\n"
-"\t\t\t\t<br /><br /><strong>Attributes:</strong>\n"
-"\t\t\t\t<br /><strong>position</strong> = ( first|last )\n"
-"\t\t\t\t<br /><strong>output</strong> = ( text|number ),\n"
-"\t\t\t\t<br />----\"src\" - will return src of the image,\n"
-"\t\t\t\t<br />----by default it will return image html\n"
-"\t\t\t\t<br /><strong>class</strong> = ( string ), class name for the image "
-"( &lt;img /&gt; ) tag\n"
-"\t\t\t\t<br /><strong>width</strong> = ( number ), set image width attr ( "
-"image scaling, not resizing )\n"
-"\t\t\t\t<br /><strong>height</strong> = ( number ), set image height attr ( "
-"image scaling, not resizing )\n"
-"\t\t\t\t<br /><strong>use_fallback</strong> = ( true|false ), set 1 to use "
-"<code>[featured_image]</code> shortcode as fallback while post content dont "
-"have any images."
+#: includes/template-tags/class-post-template-tags.php:321
+msgid "The first or last image found in the post content"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:324
+msgid "Which image in the content to use"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:328
+msgid "Return the image src instead of the full img tag"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:332
+#: includes/template-tags/class-post-template-tags.php:413
+msgid "Class name for the img tag"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:335
+msgid "Sets the width attribute — scales the image, does not resize it"
 msgstr ""
 
 #: includes/template-tags/class-post-template-tags.php:338
-msgid ""
-"<strong>Output</strong>: post meta value. if return value is an array, it "
-"will be migrated to string by using explode function\n"
-"\t\t\t\t<br /><br /><strong>Attributes:</strong>\n"
-"\t\t\t\t<br /><strong>key</strong> = ( text|number ), meta key name\n"
-"\t\t\t\t<br /><strong>sub_key</strong> = ( text|number ), if meta value is "
-"array|object, display a specific value by it's key\n"
-"\t\t\t\t<br /><strong>multiple</strong> = ( 0|1 ), display meta value at "
-"multiple occurence\n"
-"\t\t\t\t<br /><strong>sep</strong> = ( text ), separate array meta value "
-"into string"
+msgid "Sets the height attribute — scales the image, does not resize it"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:352
-msgid ""
-"<strong>Output</strong>: post meta value. if return value is an array, it "
-"will be migrated to string by using explode function\n"
-"\t\t\t\t<br /><br /><strong>Attributes:</strong>\n"
-"\t\t\t\t<br /><strong>key</strong> = ( text|number ), meta key name"
+#: includes/template-tags/class-post-template-tags.php:341
+msgid "Fall back to [featured_image] when the content has no images"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:350
+msgid "Post meta value. An array value is joined into a string."
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:353
+#: includes/template-tags/class-post-template-tags.php:374
+#: includes/template-tags/class-user-template-tags.php:68
+msgid "Meta key name"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:356
+msgid "When the meta value is an array or object, display one value by its key"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:359
+#: includes/template-tags/class-user-template-tags.php:71
+msgid "Display every occurrence of the meta value rather than the first"
 msgstr ""
 
 #: includes/template-tags/class-post-template-tags.php:363
-msgid ""
-"<strong>Output</strong>: post type terms. if return value is an array, it "
-"will be migrated to string by using explode function\n"
-"\t\t\t\t<br /><br /><strong>Attributes:</strong>\n"
-"\t\t\t\t<br /><strong>tax</strong> = ( string ), taxonomy name\n"
-"\t\t\t\t<br /><strong>sep</strong> = ( string ), separate array meta value "
-"into string\n"
-"\t\t\t\t<br /><strong>return</strong> = ( name|slug ), return plain name or "
-"slug"
+#: includes/template-tags/class-user-template-tags.php:75
+msgid "Separator used when joining an array meta value into a string"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:376
-msgid ""
-"<strong>Output</strong>: if the post type is attachment, the attached file "
-"thumb is displayed.\n"
-"\t\t\t\t<br /><br /><strong>Attributes:</strong>\n"
-"\t\t\t\t<br /><strong>id</strong> = ( string ), attachment id\n"
-"\t\t\t\t<br /><strong>meta_key</strong> = ( string ), retrieve attachment "
-"id from meta value\n"
-"\t\t\t\t<br /><strong>size</strong> = ( string ), image size\n"
-"\t\t\t\t<br /><strong>class</strong> = ( string ), class name for the image "
-"( &lt;img /&gt; ) tag\n"
-"\t\t\t\t<br /><strong>width</strong> = ( number ), image width\n"
-"\t\t\t\t<br /><strong>height</strong> = ( number ), image height\n"
-"\t\t\t\t<br /><strong>return</strong> = ( text|number ),\n"
-"\t\t\t\t<br />----\"src\" - will return src of the attachment,\n"
-"\t\t\t\t<br />----\"id\" - will return id of the attachment,\n"
-"\t\t\t\t<br />----by default it will return image html"
+#: includes/template-tags/class-post-template-tags.php:371
+msgid "Post meta value read as a date"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:395
-msgid " if the post is an attachment, the attached image source is returned"
+#: includes/template-tags/class-post-template-tags.php:382
+msgid "The post's terms in a taxonomy, joined into a string"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:402
-msgid "if the post type is hierarchical, it's parent post permalink is returned"
+#: includes/template-tags/class-post-template-tags.php:385
+msgid "Taxonomy name"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:405
-msgid "if no parent item exist, return the self permalink"
+#: includes/template-tags/class-post-template-tags.php:388
+msgid "Separator placed between terms"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:414
-msgid "title template"
+#: includes/template-tags/class-post-template-tags.php:391
+msgid "Return the plain term name or its slug"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:400
+msgid "Thumbnail of the attached file, when the post type is attachment"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:403
+msgid "Attachment id"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:407
+msgid "Read the attachment id out of this meta value instead"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:410
+msgid "Image size"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:416
+msgid "Image width"
 msgstr ""
 
 #: includes/template-tags/class-post-template-tags.php:419
-msgid "meta template"
+msgid "Image height"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:424
-#: includes/template-tags/class-post-template-tags.php:429
-msgid "publish time template"
+#: includes/template-tags/class-post-template-tags.php:422
+msgid "Return the attachment src or its id instead of the full img tag"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:434
-msgid "modified time template"
+#: includes/template-tags/class-post-template-tags.php:430
+msgid " if the post is an attachment, the attached image source is returned"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:439
-msgid "author template"
+#: includes/template-tags/class-post-template-tags.php:437
+msgid "if the post type is hierarchical, it's parent post permalink is returned"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:444
-msgid "excerpt template"
+#: includes/template-tags/class-post-template-tags.php:440
+msgid "if no parent item exist, return the self permalink"
 msgstr ""
 
 #: includes/template-tags/class-post-template-tags.php:449
+msgid "title template"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:454
+msgid "meta template"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:459
+#: includes/template-tags/class-post-template-tags.php:464
+msgid "publish time template"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:469
+msgid "modified time template"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:474
+msgid "author template"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:479
+msgid "excerpt template"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:484
 msgid "content template"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:455
-msgid ""
-"<strong>Output</strong>: more link template\n"
-"\t\t\t\t<br /><br /><strong>Attributes:</strong>\n"
-"\t\t\t\t<br /><strong>text</strong> = ( string ), text to be displayed"
+#: includes/template-tags/class-post-template-tags.php:490
+msgid "More link template"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:466
-#: includes/template-tags/class-post-template-tags.php:471
+#: includes/template-tags/class-post-template-tags.php:493
+msgid "Text to display in the link"
+msgstr ""
+
+#: includes/template-tags/class-post-template-tags.php:501
+#: includes/template-tags/class-post-template-tags.php:506
 msgid "group name / title"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:476
+#: includes/template-tags/class-post-template-tags.php:511
 msgid "group page link"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:939
+#: includes/template-tags/class-post-template-tags.php:974
 msgid "View %s"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:946
+#: includes/template-tags/class-post-template-tags.php:981
 msgid "Posted on"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:949
+#: includes/template-tags/class-post-template-tags.php:984
 msgid "by %s"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:954
+#: includes/template-tags/class-post-template-tags.php:989
 msgid "Published"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:961
+#: includes/template-tags/class-post-template-tags.php:996
 msgid "Updated"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:970
+#: includes/template-tags/class-post-template-tags.php:1005
 msgid "View all posts by %s"
 msgstr ""
 
-#: includes/template-tags/class-post-template-tags.php:987
+#: includes/template-tags/class-post-template-tags.php:1022
 msgid "Continue reading &raquo;"
 msgstr ""
 
-#: includes/template-tags/class-term-template-tags.php:31
-msgid "<strong>Output</strong>: term id"
-msgstr ""
-
 #: includes/template-tags/class-term-template-tags.php:36
-msgid "<strong>Output</strong>: term name"
+msgid "Term name"
 msgstr ""
 
 #: includes/template-tags/class-term-template-tags.php:41
-msgid "<strong>Output</strong>: term slug"
+msgid "Term slug"
 msgstr ""
 
 #: includes/template-tags/class-term-template-tags.php:46
-msgid "<strong>Output</strong>: term page link"
+msgid "Term archive permalink"
 msgstr ""
 
 #: includes/template-tags/class-term-template-tags.php:51
-msgid "<strong>Output</strong>: term posts count"
+msgid "Number of posts in the term"
 msgstr ""
 
 #: includes/template-tags/class-term-template-tags.php:56
-msgid "<strong>Output</strong>: term description"
+msgid "Term description"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:33
-msgid "<strong>Output</strong>: user id"
+msgid "User id"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:38
-msgid "<strong>Output</strong>: user name"
+msgid "User display name"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:43
-msgid "<strong>Output</strong>: user email"
+msgid "User email address"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:49
-msgid "<strong>Output</strong>: user post page link"
+msgid "Author archive permalink"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:54
-msgid "<strong>Output</strong>: user posts count"
+msgid "Number of posts by the user"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:59
-msgid "<strong>Output</strong>: user description / biography"
+msgid "User biography"
 msgstr ""
 
 #: includes/template-tags/class-user-template-tags.php:65
-msgid ""
-"<strong>Output</strong>: user meta value. if return value is an array, it "
-"will be migrated to string by using explode function\n"
-"\t\t\t\t<br /><br /><strong>Attributes</strong>:\n"
-"\t\t\t\t<br /><strong>key</strong> = (text|number), meta key name\n"
-"\t\t\t\t<br /><strong>multiple</strong> = (0|1), display meta value at "
-"multiple occurence\n"
-"\t\t\t\t<br /><strong>sep</strong> = (text), separate array meta value into "
-"string"
+msgid "User meta value. An array value is joined into a string."
 msgstr ""
 
-#: includes/template-tags/class-user-template-tags.php:77
-msgid ""
-"<strong>Output</strong>: user avatar\n"
-"\t\t\t\t<br /><br /><strong>Attributes</strong>:\n"
-"\t\t\t\t<br /><strong>size</strong> = (number), avatar image size, ex: 32, "
-"64, 128"
+#: includes/template-tags/class-user-template-tags.php:82
+msgid "User avatar image tag"
+msgstr ""
+
+#: includes/template-tags/class-user-template-tags.php:85
+msgid "Avatar image size in pixels, for example 32, 64 or 128"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
