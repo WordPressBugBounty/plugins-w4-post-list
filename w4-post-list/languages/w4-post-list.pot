@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: W4 Post List\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/w4-post-list/\n"
-"POT-Creation-Date: 2026-09-24 04:52:16+00:00\n"
+"POT-Creation-Date: 2026-10-02 02:48:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -666,7 +666,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: includes/abstracts/class-list.php:197 includes/abstracts/class-list.php:228
+#: includes/abstracts/class-list.php:201 includes/abstracts/class-list.php:232
 msgid "Unknown"
 msgstr ""
 

@@ -80,7 +80,11 @@ abstract class W4PL_List {
 		$paged_qp = 'page' . $this->id;
 
 		// remove current lists query parameter from base, other lists qr will be kept.
-		$base = remove_query_arg( $paged_qp, get_pagenum_link() ) . '%_%';
+		// The unescaped link: in the escaped one every "&" is "&#038;", which
+		// remove_query_arg() reads as the start of a fragment, so with another
+		// parameter ahead of it this list's page was never removed and the
+		// links to page one kept the visitor on the current page.
+		$base = remove_query_arg( $paged_qp, get_pagenum_link( 1, false ) ) . '%_%';
 
 		// if base already have a query parameter, use &.
 		if ( strpos( $base, '?' ) ) {
@@ -88,8 +92,6 @@ abstract class W4PL_List {
 		} else {
 			$format = '?' . $paged_qp . '=%#%';
 		}
-
-		$base = str_replace( '#038;', '&', $base );
 
 		if ( in_array( $nav_type, array( 'plain', 'list' ), true ) ) {
 			$big      = 10;
@@ -106,7 +108,9 @@ abstract class W4PL_List {
 				'add_args'  => false, // stop wp to add query arguments.
 			);
 
-			$return = paginate_links( $pag_args );
+			// paginate_links() returns null when there is a single page; keep
+			// the documented string return so callers can str_replace() it.
+			$return = (string) paginate_links( $pag_args );
 
 		} else {
 			$paged = (int) $paged;
