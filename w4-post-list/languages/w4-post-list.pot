@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: W4 Post List\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/w4-post-list/\n"
-"POT-Creation-Date: 2026-10-02 02:48:42+00:00\n"
+"POT-Creation-Date: 2026-11-06 19:05:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -684,7 +684,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: includes/class-config.php:29 includes/class-widget-postlist.php:77
+#: includes/class-config.php:29
 msgid "Title"
 msgstr ""
 
@@ -853,22 +853,31 @@ msgstr ""
 msgid "&mdash; Start from a template &mdash;"
 msgstr ""
 
-#: includes/class-widget-postlist.php:25
-msgid "Display lists created with W4 Post List"
+#: includes/class-widget-postlist.php:31
+msgid ""
+"Show a list made with W4 Post List. In the block editor, use the W4 Post "
+"List block instead."
 msgstr ""
 
-#: includes/class-widget-postlist.php:84
-msgid "Select a list"
+#: includes/class-widget-postlist.php:139
+msgid "Title:"
 msgstr ""
 
-#: includes/class-widget-postlist.php:103
-#: includes/helpers/class-helper-posts-date_query.php:89
-#: includes/helpers/class-helper-posts-meta_query.php:164
-msgid "OR"
+#: includes/class-widget-postlist.php:147
+msgid "List:"
 msgstr ""
 
-#: includes/class-widget-postlist.php:107
-msgid "Create a new one"
+#: includes/class-widget-postlist.php:151
+msgid "— Select a list —"
+msgstr ""
+
+#: includes/class-widget-postlist.php:158
+#. translators: %d: list ID
+msgid "List #%d"
+msgstr ""
+
+#: includes/class-widget-postlist.php:168
+msgid "Create a new list"
 msgstr ""
 
 #: includes/data/starter-templates.php:17
@@ -1050,6 +1059,11 @@ msgstr ""
 #: includes/helpers/class-helper-posts-meta_query.php:161
 #: includes/helpers/class-helper-posts-tax_query.php:216
 msgid "Relation"
+msgstr ""
+
+#: includes/helpers/class-helper-posts-date_query.php:89
+#: includes/helpers/class-helper-posts-meta_query.php:164
+msgid "OR"
 msgstr ""
 
 #: includes/helpers/class-helper-posts-date_query.php:90
@@ -1365,31 +1379,29 @@ msgstr ""
 msgid "CSS"
 msgstr ""
 
-#: includes/helpers/class-helper-style.php:54
+#: includes/helpers/class-helper-style.php:55
+#. translators: %s: list ID
 msgid ""
-"this css rules is placed inline just before the list is place at front-end "
-"(not in the HEAD tag).\n"
-"\t\t\t\t\t\t\t\t<br />to apply css just for current list, use "
-"<code>#w4pl-list-%s</code> as parent selector.\n"
-"\t\t\t\t\t\t\t\t<br />Alternatively, you can use "
-"<code>#w4pl-list-[listid]</code> to dynamically this selector."
+"Printed right before the list (not in the HEAD tag).\n"
+"\t\t\t\t\t\t\t\t<br />To style just this list, use "
+"<code>#w4pl-list-%s</code> as the parent selector.\n"
+"\t\t\t\t\t\t\t\t<br />Alternatively, use <code>#w4pl-list-[listid]</code> "
+"and the ID is filled in for you."
 msgstr ""
 
-#: includes/helpers/class-helper-style.php:68
+#: includes/helpers/class-helper-style.php:69
 msgid "JavaScript"
 msgstr ""
 
-#: includes/helpers/class-helper-style.php:71
-msgid ""
-"javascript loads right after template ends. don't use "
-"<code>&lt;script&gt;</code> tag"
+#: includes/helpers/class-helper-style.php:72
+msgid "Runs right after the list. Don't use a <code>&lt;script&gt;</code> tag."
 msgstr ""
 
-#: includes/helpers/class-helper-style.php:78
+#: includes/helpers/class-helper-style.php:79
 msgid "HTML class name"
 msgstr ""
 
-#: includes/helpers/class-helper-style.php:80
+#: includes/helpers/class-helper-style.php:81
 msgid "applied on the wrapper html DIV tag"
 msgstr ""
 
